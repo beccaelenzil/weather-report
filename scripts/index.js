@@ -16,7 +16,7 @@ const findLatAndLong = () => {
   axios
     .get("https://us1.locationiq.com/v1/search.php", {
       params: {
-        key: "87e54692536c26",
+        key: key,
         q: state.city,
         format: "json",
       },
@@ -35,7 +35,7 @@ const getWeather = () => {
   axios
     .get("https://api.openweathermap.org/data/2.5/onecall", {
       params: {
-        appid: "0403e1708d880066d0bc0cff565765e4",
+        appid: appid,
         lat: state.lat,
         lon: state.long,
       },
