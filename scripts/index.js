@@ -109,7 +109,6 @@ const cityNameChange = () => {
   const city_name = document.querySelector("#city_name");
   state.city = name.value;
   city_name.textContent = state.city;
-  findLatAndLong();
 };
 
 const resetCityName = () => {
@@ -118,7 +117,6 @@ const resetCityName = () => {
   name.value = "Seattle";
   state.city = name.value;
   city_name.textContent = state.city;
-  findLatAndLong();
 };
 
 const selectSky = () => {
@@ -127,7 +125,8 @@ const selectSky = () => {
 };
 
 const registerEventHandlers = () => {
-  findLatAndLong();
+  const currentTempButton = document.querySelector("#current_temp_button");
+  currentTempButton.addEventListener("click", findLatAndLong);
 
   const upButton = document.querySelector("#upButton");
   upButton.addEventListener("click", increaseTemp);
