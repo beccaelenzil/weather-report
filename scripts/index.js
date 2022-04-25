@@ -1,5 +1,3 @@
-console.log("hello!!!");
-
 const state = {
   city: "Seattle",
   lat: 47.6038321,
@@ -14,11 +12,9 @@ const convertKtoF = (temp) => {
 const findLatAndLong = () => {
   //let lat, long;
   axios
-    .get("https://us1.locationiq.com/v1/search.php", {
+    .get("http://localhost:5000/location", {
       params: {
-        key: key,
         q: state.city,
-        format: "json",
       },
     })
     .then((response) => {
@@ -33,17 +29,14 @@ const findLatAndLong = () => {
 
 const getWeather = () => {
   axios
-    .get("https://api.openweathermap.org/data/2.5/onecall", {
+    .get("http://localhost:5000/weather", {
       params: {
-        appid: appid,
         lat: state.lat,
         lon: state.long,
       },
     })
     .then((response) => {
       weather = response.data;
-      console.log(weather);
-
       state.temp = Math.round(convertKtoF(weather.current.temp));
       applyTempFormat();
     })
