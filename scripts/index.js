@@ -18,6 +18,7 @@ const findLatAndLong = () => {
       },
     })
     .then((response) => {
+      console.log(response.data);
       state.lat = response.data[0].lat;
       state.long = response.data[0].lon;
       getWeather();
