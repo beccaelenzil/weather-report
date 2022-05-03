@@ -6,16 +6,18 @@
     <link href="./styles/index.css" rel="stylesheet" />
   </head>
   <body id="page_container">
-    <h1 id="main_page_title">Weather Report</h1>
-    <h2 id="city_name_container"><span>For the lovely city of✨</span><span id="city_name">Seattle</span><span>✨</span></h2>
+    <div id="main_page_title">
+      <h1 >Weather Report</h1>
+      <h2><span>For the lovely city of✨</span><span id="city_name">Seattle</span><span>✨</span></h2>
+    </div>
     <div id="temperature_container" class="section">
       <h2 id="temperature_heading" class="section_heading">Temperature</h2>
       <div id="temperature_widget">
-        <button id="upButton">up</button>
+        <button id="upButton">⬆️ </button>
         <p id="temperature" class="orange">72</p>
-        <button id="downButton">down</button>
+        <button id="downButton">⬇️ </button>
       </div>
-      <button id="current_temp_button">Get Current City's Temperature</button>
+      <button id="current_temp_button">Get Realtime Temperature</button>
     </div>
     <div class="section">
       <h2 class="section_heading">Sky</h2>
@@ -33,13 +35,13 @@
       <input type="text" id="name_input_box" value="Seattle">
       <button id="city_name_reset">Reset City Name</button>
     </div>
-    <div class="section weather_garden_container">
+    <div id="weather_garden_container">
       <h2 class="weather_garden section_heading">Weather Garden</h2>
-      <section id="weather_garden_container">
+      <div class="section">
           <p id="garden_landscape">🌸🌿🌼__🌷🌻🌿_☘️🌱_🌻🌷</p>
           <p id="garden_sky">☀️☀️☀️☀️☀️☀️</p>
-      </section>
     </div>
+  </div>
     <script src="./scripts/index.js"></script>
     <script src="./node_modules/axios/dist/axios.min.js"></script>
   </body>
